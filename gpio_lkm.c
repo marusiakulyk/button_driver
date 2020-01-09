@@ -140,47 +140,6 @@ static unsigned int which_command(const char * com)
 * open method call creates struct file instance
 */
 
-//struct timeval tv ;
-//struct timeval timeval;
-//static uint64_t epochMilli;
-//do_gettimeofday(&tv) ;
-//epochMilli = (uint64_t)tv.tv_sec *(uint64_t)1000 +
-//             (uint64_t)(tv.tv_usec/1000);
-//
-//
-//unsigned int millis(void){
-//    uint64_t timeNow;
-//    do_gettimeofday(&timeval);
-//    timeNow = (uint64_t)timeval.tv_sec * (uint64_t)1000 + (uint64_t)(timeval.tv_usec / 1000);
-//
-//    return (uint8_t)(timeNow - epochMilli);
-//}
-//
-//extern static irqreturn_t irq_handler(int irq, void *arg){
-//    unsigned long flags;
-//    unsigned int interrupt_time = millis();
-//
-//    if (interrupt_time - last_interrupt_time < 200){
-//        printk(KERN_NOTICE "Ignored Interrupt [%d]\n", irq);
-//        return IRQ_HANDLED;
-//    }
-//    if(counter==2)
-//        return IRQ_HANDLED;
-//
-//    counter++;
-//    last_interrupt_time = interrupt_time;
-//    local_irq_save(flags);
-//    printk(KERN_NOTICE "Interrupt [%d] was triggered\n", irq);
-//    local_irq_restore(flags);
-//
-//    if(counter==2)
-//        gpio_set_value(gpioLED, 1);
-//
-//    return IRQ_HANDLED;
-//}
-//
-//EXPORT_SYMBOL(irq_handler)
-
 static int gpio_lkm_open (struct inode *inode, struct file *filp)
 {
     struct gpio_lkm_dev *gpio_lkm_devp;
